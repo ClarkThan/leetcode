@@ -8,7 +8,6 @@ type ListNode struct {
 }
 
 func main() {
-	// [1,2,3,4,5,6,7,8]
 	// n1 := ListNode{Val: 2}
 	// n2 := ListNode{Val: 1}
 	// n3 := ListNode{Val: 3}
@@ -23,6 +22,7 @@ func main() {
 	// n5.Next = &n6
 	// n6.Next = &n7
 
+	// [1,2,3,4,5,6,7,8]
 	n1 := ListNode{Val: 1}
 	n2 := ListNode{Val: 2}
 	n3 := ListNode{Val: 3}
@@ -54,19 +54,14 @@ func oddEvenList(head *ListNode) *ListNode {
 		return nil
 	}
 
-	cur := head
-	oddCur := head.Next
-	oddHead := oddCur
-	for cur != nil && oddCur != nil {
-		if oddCur.Next == nil {
-			break
-		}
-		cur.Next = oddCur.Next
-		cur = cur.Next
-		oddCur.Next = oddCur.Next.Next
-		oddCur = oddCur.Next
+	firstCur, secondCur, secondHead := head, head.Next, head.Next
+	for secondCur != nil && secondCur.Next != nil {
+		firstCur.Next = secondCur.Next
+		firstCur = firstCur.Next
+		secondCur.Next = firstCur.Next
+		secondCur = secondCur.Next
 	}
 
-	cur.Next = oddHead
+	firstCur.Next = secondHead
 	return head
 }
