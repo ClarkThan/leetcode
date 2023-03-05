@@ -8,10 +8,10 @@ type ListNode struct {
 }
 
 func main() {
-	l1 := &ListNode{Val: 0, Next: nil}
-	l2 := &ListNode{Val: 0, Next: nil}
-	// l1 := &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 3, Next: nil}}}
-	// l2 := &ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 6, Next: nil}}}
+	// l1 := &ListNode{Val: 0, Next: nil}
+	// l2 := &ListNode{Val: 0, Next: nil}
+	l1 := &ListNode{Val: 2, Next: &ListNode{Val: 4, Next: &ListNode{Val: 3, Next: nil}}}
+	l2 := &ListNode{Val: 5, Next: &ListNode{Val: 6, Next: &ListNode{Val: 6, Next: nil}}}
 	// l1 := &ListNode{Val: 9, Next: &ListNode{Val: 9, Next: &ListNode{Val: 1, Next: nil}}}
 	// l2 := &ListNode{Val: 1, Next: nil}
 	l3 := addTwoNumbers(l1, l2)
